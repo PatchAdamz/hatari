@@ -200,7 +200,7 @@ error_out:
 		closedir(dirp);
 	return -1;
 }
-#endif /* GEKKO */
+#endif /* WIIU */
 #endif	/* !HAVE_SCANDIR */
 
 

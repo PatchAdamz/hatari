@@ -15,3 +15,7 @@ cd /developer
 make -f Makefile.libretro platform=wii -j3
 make -f Makefile.libretro platform=wii -j3
 exit
+cd /developer
+make -f Makefile.libretro platform=wii -j4
+make -f Makefile.libretro platform=wii -j4
+exit
