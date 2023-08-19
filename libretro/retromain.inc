@@ -40,7 +40,7 @@ FILE* FAKEtmpfile()
 #elif defined(WIIU)
 #define CONFDIR "sd:/retroarch/cores/system"
 #elif defined(GEKKO)
-#define CONFDIR "sd:/HOMEBREW/ST"
+#define CONFDIR "sd:/retroarch/cores/system"
 #elif defined(VITA)
 #define CONFDIR "ux0:/data/retroarch/system"
 #else

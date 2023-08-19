@@ -17,10 +17,6 @@ const char File_fileid[] = "Hatari file.c : " __DATE__ " " __TIME__;
 #include <errno.h>
 #include <zlib.h>
 
-#if defined(WIN32) && !defined(_VCWIN_)
-#include <winsock2.h>
-#endif
-
 #include "main.h"
 #include "dialog.h"
 #include "file.h"
