@@ -357,7 +357,7 @@ off_t File_Length(const char *pszFileName)
  */
 bool File_Exists(const char *filename)
 {
-#if defined(WIIU) || defined(VITA)
+#if defined(WIIU) || defined(VITA) || defined(GEKKO)
     FILE * file = fopen(filename, "r");
     if (file) {
         fclose(file);
@@ -383,7 +383,7 @@ bool File_Exists(const char *filename)
  */
 bool File_DirExists(const char *path)
 {
-#if defined(WIIU) || defined(VITA)
+#if defined(WIIU) || defined(VITA) || defined(GEKKO)
 	DIR* dir = opendir(path);
 	if (dir)
 	{

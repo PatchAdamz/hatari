@@ -216,6 +216,20 @@ static void Paths_InitHomeDirs(void)
 	return;
 #endif
 
+#ifdef GEKKO
+	strcpy(sUserHomeDir, "sd:/retroarch/cores/system");
+	strcpy(sHatariHomeDir, "sd:/retroarch/cores/system/hatari");
+	if (!File_DirExists(sHatariHomeDir))
+	{
+		if (mkdir(sHatariHomeDir, 0755) != 0)
+		{
+			strcpy(sHatariHomeDir, sUserHomeDir);
+		}
+	}
+
+	return;
+#endif
+
 #ifdef VITA
 	strcpy(sUserHomeDir, "ux0:/data/retroarch/system");
 	strcpy(sHatariHomeDir, "ux0:/data/retroarch/system/hatari");
@@ -306,6 +320,11 @@ void Paths_Init(const char *argv0)
 #ifdef WIIU
 	strcpy(sWorkingDir, "sd:/retroarch/cores");
 	strcpy(sDataDir, "sd:/retroarch/cores/system");
+	Paths_InitHomeDirs();
+	return;
+#elif defined GEKKO
+	strcpy(sWorkingDir, "ux0:/data/retroarch/system");
+	strcpy(sDataDir, "ux0:/data/retroarch/system");
 	Paths_InitHomeDirs();
 	return;
 #elif defined(VITA)
